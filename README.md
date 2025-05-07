@@ -22,19 +22,6 @@ Within each sub-pool, multiple controversy categories exist (e.g., Common Proper
 Each controversy category includes:
     Multiple applicable legal articles (e.g., Civil Code Art. 1062)
     Corresponding FOL rules derived from articles (e.g., ∀p[Property(p)...])
-
-Table
----------------------------------------------------------------------------------------------------------------
-**Disputed Issues                               **Legal Articles **FOL Rules
----------------------------------------------------------------------------------------------------------------
-**Common Property Determination        **CC Art.1062   **∀p [Property(p) ∧ ∃tAcquiredDuringMarriage(p,t) ⇒ (IsSalary(p) ∨ IsInvestmentReturn(p) ∨ IsIntellectualPropertyReturn(p) ∨ IsInheritanceOrGift(p) ∨ IsCommonProperty(p))]
-
-**Marital Property Division Situations **CC Art.1066   **∀A [RequestSplit(A) ⇔ (∃B (HasDamagedProperty(B) ∧ Intentional(B) ∧ SeriousDamage(B)) ∨ ∃C (MajorIllness(C) ∧ RefusalToPay(C)))]
-
-**Joint Debt Determination             **CC Art.1064   **∀A [MaritalDebt(A) ⇔ (∃B (JointSignature(B) ∨ PostApproval(A,B)) ∨ (Debt(A) ∧ DailyNeeds(A)))]
-
-**Major Illness Determination          **JI[21]        **∀D [MajorIllness(D) ⇔ (MedicalProhibitedLegacy(D) ∨ (ChronicOrSevere(D) ∧ HighCost(D) ∧ ImpactMaritalLife(D)) ∨ (NecessaryTreatment(D) ∧ RefusalToPay(D)))]
----------------------------------------------------------------------------------------------------------------
     
     Step 3: Matching Process
 Given a query-cause pair, our model identifies the relevant sub-pool. It then iteratively checks whether each disputed issue exists, based on the model's semantic understanding. For each exists, the model selects the most applicable legal rules from one or more related articles.  
